@@ -33,7 +33,7 @@ def clean_jsons(arr):
     df_lower = df_raw.apply(lambda x: x.str.lower() if x.dtype == "object" else x) # makes all values lower case
     df_unique = df_lower.drop_duplicates(ignore_index=True) # drops duplicte values excluding index 
     df_unique = df_unique.dropna() 
-    df_unique.to_csv('Prototype/results/mistral_results.csv', mode='w+')
+    df_unique.to_csv('results/mistral_results.csv', mode='w+')
 
 # going to change this to play around with 
 # recursive chunking first trys to chunk by paragraphs then by sentences etc to keep it togeather  
@@ -123,11 +123,10 @@ def section_pull_data(txtfile):
                 unique_connections.add(dict_tuple)
                 # SAME CHANGE AS GEMINI PROTOTYPE NOV 1
                 # connections.append(conn)
-                util.convert_json_list_to_csv([conn], "Prototype/results/mistral_results.csv")
+                util.convert_json_list_to_csv([conn], "results/mistral_results.csv")
 
-    util.convert_json_list_to_csv(connections, "Prototype/results/mistral_results.csv")
+    util.convert_json_list_to_csv(connections, "results/mistral_results.csv")
     return connections
        
 # section_pull_data("Prototype/paper_extraction_output.txt")
 # section_pull_data("Prototype/testPaper.txt")
-

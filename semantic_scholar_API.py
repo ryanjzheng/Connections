@@ -182,7 +182,7 @@ def demo(title: str, authors: list[str]) -> list:
     if res == 1:
         file = util.download_pdf(url)
         text = util.extract_text_pypdf2(file)
-        filename = 'Prototype/results/semantic_scholar_paper_output.txt'
+        filename = 'results/semantic_scholar_paper_output.txt'
         with open(filename, 'w', encoding='utf-8') as f:
             f.write(text)
         
