@@ -1,7 +1,13 @@
 import requests
+from dotenv import load_dotenv
 import os
 
-def coreAPI(title, api_key):
+load_dotenv()
+api_key = os.getenv('CoreAPI_KEY')
+
+# This function retrieves the full text of the paper with the given title from the Core API.
+# It returns a list with the status code and the filename of the retrieved full text.
+def coreAPI(title: str, api_key: str) -> list:
     base_url = "https://api.core.ac.uk/v3/search/works"
     
     params = {
@@ -29,15 +35,14 @@ def coreAPI(title, api_key):
     else:
         return [500, f"Error: {response.status_code} - {response.text}"]
 
-# Example usage
-api_key = "jXB4ITAvyS68NnHC2Ywmu5bKstEpgJ7M"
-outputName = "output.txt"
-
-def demo(paperName, authors):
+# This function retrieves the PDF of the paper with the given name and authors from Core.
+# It returns a list with the status code and the filename of the retrieved PDF.
+def retrievePDF(paperName: str, authors: list[str], filename = "coreAPI.txt") -> list:
+    filename = f"./tmp/{filename}"
     full_text = coreAPI(paperName, api_key)
     if full_text[0] == 1:
-        with open(outputName, "w", encoding="UTF-8") as f:
+        with open(filename, "w", encoding="UTF-8") as f:
             f.write(full_text[1])
-        full_text[1] = outputName
+        full_text[1] = filename
 
     return full_text

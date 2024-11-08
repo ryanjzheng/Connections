@@ -54,17 +54,16 @@ def extract_text_from_pdf(file_path):
             text += page.extract_text() + "\n"
     return text
 
-# Add this to dotenv file: 
-# GeminiAPI_KEY = AIzaSyBhKRZ2NXb-Eo33GEv4cGckmrm66W4zgtY'
-
-# using .env so we can each use our own API key
+# using .env so user can use their own API key
 key = os.getenv('GeminiAPI_KEY')
 genai.configure(api_key=key)
 model = genai.GenerativeModel(model_name='gemini-1.5-flash',generation_config={"response_mime_type": "application/json"})
 
-def chunk_data(file):
+# This function takes a text file and chunks it into smaller pieces
+# Used to avoid rate limits
+def chunk_data(file: str, chunk_size : int) -> typing.List[str]:
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size = 3000, # about 500 words
+        chunk_size = chunk_size, # about 500 words
         chunk_overlap = 100,
         length_function = len,
     )
@@ -75,38 +74,18 @@ def chunk_data(file):
     chunks = text_splitter.split_text(text)
     return chunks
 
-def combine_jsons(arr):
-    # remove the nums
-    # give a unique key to each json in array
-    # combine them into one json
-    # convert to pandas dataframe
-    combined = {}
-    unique_key = 0
-    for i in range(len(arr)):
-        for key in arr[i]:
-            # print(key)
-            # print(json.dumps(arr[i][key], indent=2))
-            combined[unique_key] = arr[i][key]
-            unique_key += 1
-    # prettified output of final JSON
-    print("\033[92mcombine_json final results:\033[0m")
-    print(json.dumps(combined, indent=2))
-    df_T = pd.DataFrame(combined).T
-    df_T.to_csv('Prototype/gemini_prototype.csv', mode='w+')
-    print("printed")
-
-def pandas_clean(arr):
+# This function is used to remove duplicates and NULLs from the JSON data
+def pandas_clean(arr: typing.List[dict]) -> None:
     df_raw = pd.DataFrame(arr)
     df_lower = df_raw.apply(lambda x: x.str.lower() if x.dtype == "object" else x) # makes all values lower case
     df_unique = df_lower.drop_duplicates(ignore_index=True) # drops duplicte values excluding index 
     df_unique = df_unique.dropna() 
     df_unique.to_csv('Prototype/results/gemini_results.csv', mode='w+')
 
-# works okish i guess want to make sure that these are not just the refrences so should cross refrence this
-# creates a list of these connections in the json format 
-def section_pull_data(txtfile):
+# This function takes a text file and extracts connections from it using the Gemini API
+def section_pull_data(txtfile: str) -> typing.List[dict]:
     #text = extract_text_from_pdf("connect4/Prototype/paper.pdf")
-    chunk = chunk_data(txtfile) # well readable text file 
+    chunk = chunk_data(txtfile, 3000) # well readable text file 
     base_query = '''Given this part of the research paper, Respond with every SPECIFIC, NAMED organization, person, or lab that helped the author (we call this a "connection").
     Only include named people, universities, or labs, ensuring they are PROPER nouns or formal entities. 
     Exclude any terms that describe roles, groups, or anonymous contributors, or are otherwise unclear.
@@ -178,9 +157,9 @@ def section_pull_data(txtfile):
     # pandas_clean(connections)
     return connections
 
-# this is taken from the mistral once could probaly combine it into one file but will do that later
-# function makes sure it doesn't error out because of rate limit might have to expand max_retries 
-def fetch_with_backoff(query, max_retries):
+# This helper function is used to fetch data from the API with exponential backoff
+# This is used to avoid rate limits by waiting and retrying
+def fetch_with_backoff(query: str, max_retries: int) -> genai.GenerativeModel.generate_content:
     retry_delay = 1  # Initial delay in seconds
     for attempt in range(max_retries):
         try:
