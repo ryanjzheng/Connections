@@ -1,0 +1,135 @@
+name,connection_type,connection,is_ambiguous
+Emory University School of Medicine,Organization,Funded,False
+Emory Rollins School of Public Health,Organization,Funded,False
+Jamaji C. Nwanaji-Enwerem,Person,Co-author,False
+Mikhaila Smith-Wilkerson,Person,Co-author,False
+Brittney Gordon,Person,Co-author,False
+Helene Okpere,Person,Co-author,False
+Terrell Jones,Person,Co-author,False
+Rahel Gizaw,Person,Co-author,False
+Irfan Husain,Person,Co-author,False
+United States Department of Health and Human Services,Organization,Referenced,False
+Institute of Medicine,Organization,Referenced,False
+US Department of Education,Organization,Referenced,False
+National Assessment of Health Literacy Skills,Organization,Referenced,False
+Professional Organizations,Organization,Referenced,True
+Universal Health Literacy Precautions,Organization,Referenced,False
+ED Randomized Trial,Organization,Referenced,False
+Allan Paivio,Person,Referenced,False
+Agency for Healthcare Research and Quality,Organization,Referenced,False
+Dr. Douglas Ander,Person,Referenced,False
+Emory School of Medicine,Organization,Referenced,False
+Emory Rollins School of Public Health,Organization,Referenced,False
+National Assessment of Adult Literacy,Organization,Referenced,False
+Academic Press,Organization,Referenced,False
+Frontiers in Psychology,Organization,Referenced,False
+Academic Emergency Medicine,Organization,Referenced,False
+Annals of Behavioral Science and Medical Education,Organization,Referenced,False
+Paediatrics & Child Health,Organization,Referenced,False
+Educational Psychology Review,Organization,Referenced,False
+Psychology of Learning and Motivation,Organization,Referenced,False
+Musculoskeletal Science and Practice,Organization,Referenced,False
+American Family Physician,Organization,Referenced,False
+Social Science & Medicine,Organization,Referenced,False
+Annals of Internal Medicine,Organization,Referenced,False
+Journal of Health Communication,Organization,Referenced,False
+American Journal of Emergency Medicine,Organization,Referenced,False
+Pediatric Emergency Care,Organization,Referenced,False
+E Green,Person,Co-author,True
+D Sullivan,Person,Co-author,True
+N Berkman,Person,Co-author,True
+T Davis,Person,Co-author,True
+L McCormack,Person,Co-author,True
+Patient education and health literacy.,Paper,referenced,False
+H. Wittink,Person,referenced,False
+J. Oosterhaven,Person,referenced,False
+Learning Styles: Academic Fact or Urban Myth? A Recent Review of the Literature,Paper,referenced,False
+T. R. LeBlanc,Person,referenced,False
+The Association of Health Literacy With Preventable Emergency Department Visits: A Cross\u2010sectional Study,Paper,referenced,False
+M. P. Balakrishnan,Person,referenced,False
+J. B. Herndon,Person,referenced,False
+Jingnan Zhang,Person,referenced,False
+T. Payton,Person,referenced,False
+J. Shuster,Person,referenced,False
+D. Carden,Person,referenced,False
+"Involved, inputting or informing: \u201cShared\u201d decision making in adult mental health care",Paper,referenced,False
+E. Bradley,Person,referenced,False
+D. Green,Person,referenced,False
+The Growing Health Literacy Gap and Graduate Medical Education.,Paper,referenced,False
+Gail M. Sullivan,Person,referenced,False
+Evidence-Based Higher Education \u2013 Is the Learning Styles \u2018Myth\u2019 Important?,Paper,referenced,False
+P. Newton,Person,referenced,False
+Mahallad Miah,Person,referenced,False
+Demonstration of the Health Literacy Universal Precautions Toolkit: Lessons for Quality Improvement,Paper,referenced,False
+Natabhona Mabachi,Person,referenced,False
+Maribel Cifuentes,Person,referenced,False
+Juliana G Barnard,Person,referenced,False
+A. Brega,Person,referenced,False
+K. Albright,Person,referenced,False
+B. Weiss,Person,referenced,False
+Cindy Brach,Person,referenced,False
+David R West,Person,referenced,False
+Health Literacy in Primary Care Practice.,Paper,referenced,False
+Lauren R. Hersh,Person,referenced,False
+B. Salzman,Person,referenced,False
+D. Snyderman,Person,referenced,False
+Is low health literacy associated with increased emergency department utilization and recidivism?,Paper,referenced,False
+R. Griffey,Person,referenced,False
+Sara Kennedy,Person,referenced,False
+Lucy D\u2019Agostino McGowan,Person,referenced,False
+M. Goodman,Person,referenced,False
+K. Kaphingst,Person,referenced,False
+Seven practical principles for improving patient education: Evidence-based ideas from cognition science.,Paper,referenced,False
+M. Pusic,Person,referenced,False
+Kevin Ching,Person,referenced,False
+H. S. Yin,Person,referenced,False
+David Kessler,Person,referenced,False
+"Using Video Discharge Instructions as an Adjunct to Standard Written Instructions Improved Caregivers\u2019 Understanding of Their Child\u2019s Emergency Department Visit, Plan, and Follow-Up: A Randomized Controlled Trial",Paper,referenced,False
+Scott A. Bloch,Person,referenced,False
+A. Bloch,Person,referenced,False
+A Theoretical Approach to Improving Patient Education through Written Materials,Paper,referenced,False
+R. Goolsby,Person,referenced,False
+Mark Sadoski,Person,referenced,False
+Using Health Literacy and Learning Style Preferences to Optimize the Delivery of Health Information,Paper,referenced,False
+N. Giuse,Person,referenced,False
+Taneya Y. Koonce,Person,referenced,False
+A. Storrow,Person,referenced,False
+Sheila V. Kusnoor,Person,referenced,False
+Fei Ye,Person,referenced,False
+Low Health Literacy and Health Outcomes: An Updated Systematic Review,Paper,referenced,False
+N. Berkman,Person,referenced,False
+Stacey L. Sheridan,Person,referenced,False
+Katrina E. Donahue,Person,referenced,False
+David J. Halpern,Person,referenced,False
+Karen Crotty,Person,referenced,False
+Health Literacy: What Is It?,Paper,referenced,False
+N. Berkman,Person,referenced,False
+T. Davis,Person,referenced,False
+L. McCormack,Person,referenced,False
+The evolving concept of health literacy.,Paper,referenced,False
+D. Nutbeam,Person,referenced,False
+The Health Literacy of America's Adults: Results from the 2003 National Assessment of Adult Literacy. NCES 2006-483.,Paper,referenced,False
+Mark A. Kutner,Person,referenced,False
+E. Greenburg,Person,referenced,False
+Ying Jin,Person,referenced,False
+C. Paulsen,Person,referenced,False
+Patient education in the emergency department.,Paper,referenced,False
+Henry G. Wei,Person,referenced,False
+Henry G. Wei,Person,referenced,False
+C. Camargo,Person,referenced,False
+C. Camargo,Person,referenced,False
+Dual coding theory and education,Paper,referenced,False
+James M. Clark,Person,referenced,False
+A. Paivio,Person,referenced,False
+Working memory,Paper,referenced,False
+G. Hitch,Person,referenced,False
+Assessing patient activation and health literacy in the ED.,Paper,referenced,False
+S. Sheikh,Person,referenced,False
+P. Hendry,Person,referenced,False
+C. Kalynych,Person,referenced,False
+Brittany Owensby,Person,referenced,False
+Jennifer Johnson,Person,referenced,False
+D. Kraemer,Person,referenced,False
+D. Carden,Person,referenced,False
+Tool 3a: Health Literacy: Hidden Barriers and Practical Strategies,Paper,referenced,False
+"Volume 24, NO.1: January 2023 Literacy. Washington, DC: US Department of Education. 7",Paper,referenced,False

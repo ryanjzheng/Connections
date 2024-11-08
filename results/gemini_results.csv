@@ -1,0 +1,70 @@
+name,connection_type,connection,is_ambiguous
+Gary Nilson,Person,Co-author,False
+Kent Wills,Person,Co-author,False
+Jeffrey Stuckman,Person,Co-author,False
+James Purtilo,Person,Co-author,False
+University of Maryland,Organization,Co-author,False
+White Hat Security,Organization,Referenced,False
+National Vulnerability Database,Organization,Referenced,False
+Open Source Vulnerability Database,Organization,Referenced,False
+Exploit Database,Organization,Referenced,False
+SAMATE,Organization,Referenced,False
+SecuriBench,Organization,Referenced,False
+WebGoat,Organization,Referenced,False
+Metasploit,Organization,Referenced,False
+Debian,Organization,Referenced,False
+Apache,Organization,Referenced,False
+PHP,Organization,Referenced,False
+MYSQL,Organization,Referenced,False
+Rsync,Organization,Referenced,False
+Selenium,Organization,Referenced,False
+Firefox,Organization,Referenced,False
+XDebug,Organization,Referenced,False
+J. Smith,Person,Referenced,True
+Selenium Server,Organization,Referenced,False
+MySQL,Organization,Referenced,False
+Linux,Organization,Referenced,False
+urllib,Organization,Referenced,False
+WordPress,Organization,Referenced,False
+United States Office of Naval Research,Organization,Funded,False
+"ANTUNES, N.",Person,Referenced,True
+"VIEIRA, M.",Person,Referenced,True
+"AUSTIN, A.",Person,Referenced,True
+"WILLIAMS, L.",Person,Referenced,True
+"BRUMLEY, D.",Person,Referenced,True
+"NEWSOME, J.",Person,Referenced,True
+"SONG, D.",Person,Referenced,True
+"WANG, H.",Person,Referenced,True
+"JHA, S.",Person,Referenced,True
+"D’AMBROS, M.",Person,Referenced,True
+"LANZA, M.",Person,Referenced,True
+"ROBBES, R.",Person,Referenced,True
+"FONSECA, J.",Person,Referenced,True
+"HUYNH, T.",Person,Referenced,True
+"MILLER, J.",Person,Referenced,True
+"KU, K.",Person,Referenced,True
+"HART, T. E.",Person,Referenced,True
+"CHECHIK, M.",Person,Referenced,True
+"LIE, D.",Person,Referenced,True
+IEEE,Organization,Referenced,False
+ACM,Organization,Referenced,False
+Citeseer,Organization,Referenced,False
+NIST,Organization,Referenced,False
+Offensive Security,Organization,Referenced,False
+OWASP,Organization,Referenced,False
+Rapid7,Organization,Referenced,False
+Shin,Person,Referenced,True
+Meneely,Person,Referenced,True
+Williams,Person,Referenced,True
+Osborne,Person,Referenced,True
+Stuckman,Person,Referenced,True
+Purtilo,Person,Referenced,True
+Su,Person,Referenced,True
+Wassermann,Person,Referenced,True
+Whitehat,Organization,Referenced,False
+Hollingsworth,Person,Referenced,True
+Zimmermann,Person,Referenced,True
+Premraj,Person,Referenced,True
+Zeller,Person,Referenced,True
+PROMISE,Organization,Referenced,False
+ICSE,Organization,Referenced,False

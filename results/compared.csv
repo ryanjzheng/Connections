@@ -1,0 +1,53 @@
+,name,connection_type,connection,is_ambiguous,Source,is_duplicate
+0,White Hat Security,Organization,Referenced,False,gemini_response,False
+1,SAMATE,Organization,Referenced,False,gemini_response,False
+2,Rsync,Organization,Referenced,False,gemini_response,False
+3,J. Smith,Person,Referenced,True,gemini_response,False
+4,Selenium Server,Organization,Referenced,False,gemini_response,False
+5,Linux,Organization,Referenced,False,gemini_response,False
+6,urllib,Organization,Referenced,False,gemini_response,False
+7,"ANTUNES, N.",Person,Referenced,True,gemini_response,False
+8,"VIEIRA, M.",Person,Referenced,True,gemini_response,False
+9,"AUSTIN, A.",Person,Referenced,True,gemini_response,False
+10,"WILLIAMS, L.",Person,Referenced,True,gemini_response,False
+11,"BRUMLEY, D.",Person,Referenced,True,gemini_response,False
+12,"NEWSOME, J.",Person,Referenced,True,gemini_response,False
+13,"SONG, D.",Person,Referenced,True,gemini_response,False
+14,"WANG, H.",Person,Referenced,True,gemini_response,False
+15,"JHA, S.",Person,Referenced,True,gemini_response,False
+16,"Dâ€™AMBROS, M.",Person,Referenced,True,gemini_response,False
+17,"LANZA, M.",Person,Referenced,True,gemini_response,False
+18,"ROBBES, R.",Person,Referenced,True,gemini_response,False
+19,"FONSECA, J.",Person,Referenced,True,gemini_response,False
+20,"HUYNH, T.",Person,Referenced,True,gemini_response,False
+21,"MILLER, J.",Person,Referenced,True,gemini_response,False
+22,"KU, K.",Person,Referenced,True,gemini_response,False
+23,"HART, T. E.",Person,Referenced,True,gemini_response,False
+24,"CHECHIK, M.",Person,Referenced,True,gemini_response,False
+25,"LIE, D.",Person,Referenced,True,gemini_response,False
+26,IEEE,Organization,Referenced,False,gemini_response,False
+27,ACM,Organization,Referenced,False,gemini_response,False
+28,Citeseer,Organization,Referenced,False,gemini_response,False
+29,Shin,Person,Referenced,True,gemini_response,False
+30,Meneely,Person,Referenced,True,gemini_response,False
+31,Williams,Person,Referenced,True,gemini_response,False
+32,Osborne,Person,Referenced,True,gemini_response,False
+33,Stuckman,Person,Referenced,True,gemini_response,False
+34,Purtilo,Person,Referenced,True,gemini_response,False
+35,Su,Person,Referenced,True,gemini_response,False
+36,Wassermann,Person,Referenced,True,gemini_response,False
+37,Hollingsworth,Person,Referenced,True,gemini_response,False
+38,Zimmermann,Person,Referenced,True,gemini_response,False
+39,Premraj,Person,Referenced,True,gemini_response,False
+40,Zeller,Person,Referenced,True,gemini_response,False
+41,PROMISE,Organization,Referenced,False,gemini_response,False
+42,ICSE,Organization,Referenced,False,gemini_response,False
+43,SAMATE reference dataset,Organization,Referenced,False,mistral_response,False
+44,BugBox,Organization,Referenced,False,mistral_response,False
+45,Debian Linux,Organization,Referenced,False,mistral_response,False
+46,debbootstrap,Organization,Referenced,False,mistral_response,False
+47,BugBox,Organization,Used,False,mistral_response,False
+48,Engine,Organization,Referenced,False,mistral_response,False
+49,Exploit,Organization,Referenced,False,mistral_response,False
+50,Target,Organization,Referenced,False,mistral_response,False
+51,Metasploit Framework,Organization,Referenced,False,mistral_response,False
