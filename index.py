@@ -41,7 +41,6 @@ def get_papers_ss():
     threads = []
 
     timestamp = f"{time()}-"
-
     for grabMethod in paperGrabs:
         print(f"Attempting to grab paper '{title}' from {grabMethod[0]}")
         t = threadUtil.ThreadWithReturnValue(None, grabMethod[1], grabMethod[0], [title, authors, timestamp + grabMethod[2]])
@@ -52,8 +51,6 @@ def get_papers_ss():
         thread.join()
 
     api_server_fails = 0
-
-
     for (thread,name) in threads:
         print("PDF fetch result:",name)
         print(thread._return)

@@ -1,6 +1,7 @@
 import requests
 import gzip
 import shutil
+from os import remove
 
 # This function queries the arXiv API for the paper with the given title.
 def querySite(url: str, maxAttempts = 5) -> requests.models.Response:
@@ -71,10 +72,10 @@ def retrievePDF(paperName: str, authors: list[str], filename = "arXiv.tex") -> l
     if link == None:
         return [0, "Could not find matching article."]
     
-    zipFile = f"./tmp/arXiv.gz"
+    zipFile = f"./results/arXiv.gz"
     latexFile = f"./results/{filename}"
     downloadFile(link, zipFile)
     unzip(zipFile, latexFile)
     extractLatex(latexFile)
-
+    remove(zipFile)
     return [1, latexFile]
