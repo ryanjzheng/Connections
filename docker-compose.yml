@@ -7,3 +7,6 @@ services:
     environment:
       - FLASK_APP=index.py
       - FLASK_ENV=development
+      - Mistral_key=${Mistral_key}
+      - CoreAPI_KEY=${CoreAPI_KEY}
+      - GeminiAPI_KEY=${GeminiAPI_KEY}

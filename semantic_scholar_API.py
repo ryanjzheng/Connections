@@ -1,9 +1,5 @@
-from nameparser import HumanName
 import util
 import time
-
-# paperName = "ReBound An OpenSource 3D Bounding Box Annotation Tool for Active Learning"
-# paperAuthor = "James Dfafeaw"
 
 # Given the title and at least one author of a paper, returns the Semantic 
 # Scholar paper ID of the most relevant paper that contains ANY ONE of the given authors
@@ -13,31 +9,18 @@ def getPaperID(given_title: str, given_authors: list[str]) -> tuple[int, str]:
     link = endpoint + "?query=" + given_title + "&limit=5&fields=" + ','.join(fields)
     response, got_response = util.fetchWithBackoff(link)
 
-    if response['total'] == 0:
-        return 0, "Could not find matching article."
-
     if got_response:
+        # If Semantic Scholar finds no matching articles, return failure
+        if response['total'] == 0:
+            return 0, "Could not find matching article."
         papers = response['data']
 
-        # convert string names to HumanNames for comparison
-        given_authors_as_hn = [HumanName(auth) for auth in given_authors]
-
-        # convert first name to only first initial
-        for hn in given_authors_as_hn:
-            hn.first = hn.first[0] + '.'
-
-        for paper in papers:
-            authors = paper['authors']
-            for author in authors:
-                author_hn = HumanName(author['name'])
-                # convert first name to only first initial
-                author_hn.first = author_hn.first[0] + '.'
-                if any([author_hn.first == given_auth_hn.first and author_hn.last == given_auth_hn.last for given_auth_hn in given_authors_as_hn]):
-                    id = paper['paperId']
-                    print(f'Got id {id}')
-                    return 1, id
-                
-        return 0, "Failed to get Semantic Scholar paper ID"
+        # For now, just return the best match. Will consider ways to 
+        # incorporate authors after CDR
+        best_matching_paper = papers[0]
+        id = best_matching_paper['paperId']
+        print(f'Got Semantic Scholar ID {id}')
+        return 1, id
     else:
         return 500, "Failed to get response from Semantic Scholar"
 
@@ -54,7 +37,7 @@ def getOpenAccessLink(id: str) -> tuple[int, str]:
     if got_response:
         isOpenAccess = response['isOpenAccess']
         
-        if isOpenAccess:
+        if isOpenAccess and response['openAccessPdf'] is not None:
             pdf_url = response['openAccessPdf']['url']
             print(f'Got url: {pdf_url}')
             return 1, pdf_url
@@ -117,72 +100,29 @@ def processReferencesAndAuthors(papers: list[dict]) -> list[dict]:
                 "name" : auth_name, 
                 "connection-type" : "Person",
                 "connection" : "referenced",
-                "is-ambiguous" : nameIsAmbiguous(auth_name)
+                "is-ambiguous" : util.nameIsAmbiguous(auth_name)
             }
 
             res.append(auth_connection)
 
     return res
 
-def processAuthors(authors):
-    res = []
-
-    for auth in authors:
-        auth_name = util.tryDecodings(auth['name'])
-        author_connection = {
-            "name" : auth_name, 
-            "connection-type" : "Person",
-            "connection" : "author",
-            "is-ambiguous" : str(nameIsAmbiguous(auth_name))
-        }
-        res.append(author_connection)
-
-    return res
-
-# checks if the first name is only specified with first initial
-# def nameIsAmbiguous(name):
-#     first_name = name.split()[0]
-
-#     if first_name is not None and len(first_name) == 2 and first_name[1] == '.' and first_name[0].isalpha():
-#         return "True"
-#     else:
-#         return "False"
-
-# needs adjusting but using this library is probably better than what i was doing before
-def nameIsAmbiguous(name_string):
-    hn = HumanName(name_string)
-    
-    # Check if the name has multiple possible interpretations
-    if hn.first and hn.last:
-        return False
-    
-    # Check for common ambiguous cases
-    if hn.first and not hn.last:
-        return True
-    if hn.last and not hn.first:
-        return True
-    if hn.first == hn.last:
-        return True
-    
-    # Check for potential title/name confusion
-    if hn.title and not hn.first:
-        return True
-    
-    return False
-
-# connections = getPaperReferences(paperName, [paperAuthor])
-# util.convert_json_list_to_csv(connections, 'Prototype/results/semScholarReferences.csv')
-
-def demo(title: str, authors: list[str]) -> list:
-    code, msg = getPaperID(title, authors)
+# Similar to the function in core_API.py, this function retrieves the PDF of the
+# paper with the given name and authors from Semantic Scholar.
+def retrievePDF(paperName: str, authors: list[str], filename: str) -> list:
+    code, msg = getPaperID(paperName, authors)
     if code != 1:
         return [code, msg]
-    time.sleep(5)
     res, url = getOpenAccessLink(msg)
     if res == 1:
         file = util.download_pdf(url)
+        if file is None:
+            return [500, f"Failed to download PDF from {url}"]
         text = util.extract_text_pypdf2(file)
-        filename = 'results/semantic_scholar_paper_output.txt'
+        if text is None:
+            return [500, "Failed to extract PDF with PyPDF2"]
+        
+        filename = f'./results/{filename}'
         with open(filename, 'w', encoding='utf-8') as f:
             f.write(text)
         

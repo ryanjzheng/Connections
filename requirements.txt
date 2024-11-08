@@ -9,3 +9,4 @@ mistralai
 nameparser
 pandas
 requests
+PyMuPDF==1.23.8
